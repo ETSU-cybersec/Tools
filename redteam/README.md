@@ -1,1 +1,1 @@
-Valkyrie's Dirsearch function not yet functional
+Club-created tools to help members in koths and competitions
