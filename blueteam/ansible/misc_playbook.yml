@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Ensure rsyslog is enabled and started
+      systemd:
+        name: rsyslog
+        enabled: yes
+        state: started
+

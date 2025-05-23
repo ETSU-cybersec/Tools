@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Ensure SELinux is set to enforcing
+      lineinfile:
+        path: /etc/selinux/config
+        regexp: '^SELINUX='
+        line: 'SELINUX=enforcing'
+        backup: yes 
+      notify: Check if reboot is needed
+
+  handlers:
+    - name: Check if reboot is needed
+      block:
+        - name: Prompt user to reboot the system
+          pause:
+            prompt: "SELinux config changed. Press enter to reboot or crtl-c to cancel playbook"
+            echo: yes
+
+        - name: Reboot the system
+          reboot:
+            reboot_timeout: 600

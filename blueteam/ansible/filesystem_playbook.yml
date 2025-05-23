@@ -1,0 +1,58 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Enable hardlink/symlink protection
+      copy:
+        dest: /etc/sysctl.d/50-fs-hardening.conf
+        content: |
+          fs.protected_hardlinks = 1
+          fs.protected_symlinks = 1
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Disable uncommon filesystems
+      copy:
+        dest: /etc/modprobe.d/uncommon-fs.conf
+        content: |
+          install cramfs /bin/false
+          install freevxfs /bin/false
+          install jffs2 /bin/false
+          install hfs /bin/false
+          install hfsplus /bin/false
+          install squashfs /bin/false
+          install udf /bin/false
+          install fat /bin/false
+          install vfat /bin/false
+          install nfs /bin/false
+          install nfsv3 /bin/false
+          install gfs2 /bin/false
+        owner: root
+        group: root
+        mode: '0644'
+        notify: Rebuild initramfs
+
+  handlers:
+    - name: Rebuild initramfs
+      block:
+        - name: Check if update-initramfs exists
+          stat:
+            path: /usr/sbin/update-initramfs
+          register: update_initramfs_bin
+
+        - name: Run update-initramfs
+          command: update-initramfs -u
+          when: update_initramfs_bin.stat.exists
+        
+        - name: Check if dracut exists
+          stat:
+            path: /usr/bin/dracut
+          register: dracut_bin
+          when: not update_initramfs_bin.stat.exists
+
+        - name: Run dracut
+          command: dracut -f
+          when: dracut_bin.stat.exists
+
+

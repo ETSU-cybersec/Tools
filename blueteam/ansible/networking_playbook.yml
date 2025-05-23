@@ -4,39 +4,15 @@
   tasks:
     - name: Write the sysctl config file
       copy:
-        content: "net.ipv4.tcp_syncookies = 1\n"
         dest: /etc/sysctl.d/50-net-stack.conf
-        owner: root
-        group: root
-        mode: '0644'
-    - name: Disable IP source routing
-      copy:
-        content: "net.ipv4.conf.all.accept_source_route = 0\n"
-        dest: /etc/sysctl.d/50-net-stack.conf
-        owner: root
-        group: root
-        mode: '0644'
-    - name: Disable ICMP redirect acceptance
-      copy:
-        content: "net.ipv4.conf.all.accept_redirects = 0\n"
-        dest: /etc/sysctl.d/50-net-stack.conf
-        owner: root
-        group: root
-        mode: '0644'
-    - name: Enable ignoring to ICMP requests
-      copy:
-        content: "net.ipv4.icmp_echo_ignore_all = 1\n"
-        dest: /etc/sysctl.d/50-net-stack.conf
-        owner: root
-        group: root
-        mode: '0644'
-    - name: Enable ignoring broadcast requests
-      copy:
-        content: "net.ipv4.icmp_echo_ignore_broadcasts = 1\n"
-        dest: /etc/sysctl.d/50-net-stack.conf
+        content: |
+          net.ipv4.tcp_syncookies = 1
+          net.ipv4.conf.all.accept_source_route = 0
+          net.ipv4.conf.all.accept_redirects = 0
+          net.ipv4.icmp_echo_ignore_all = 1
+          net.ipv4.icmp_echo_ignore_broadcasts = 1
         owner: root
         group: root
         mode: '0644'
     - name: Reload sysctl settings
       command: sysctl --system
-

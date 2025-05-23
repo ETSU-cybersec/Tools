@@ -1,0 +1,35 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Restrict access to kernel logs.
+      copy:
+        dest: /etc/sysctl.d/50-dmesg-restrict.conf
+        content: "kernel.dmesg_restrict = 1"
+      owner: root
+      group: root
+      mode: '0644'
+
+    - name: Restrict access to kernel pointers
+      copy:
+        dest: /etc/sysctl.d/50-kptr-restrict.conf
+        content: "kernel.kptr_restrict = 1"
+      owner: root
+      group: root
+      mode: '0644'
+
+    - name: Enable ExecShield protection
+      copy:
+        dest: /etc/sysctl.d/50-exec-shield.conf
+        content: "kernel.exec_shield = 2"
+      owner: root
+      group: root
+      mode: '0644'
+
+    - name: Randomise memory space
+      copy:
+        dest: /etc/sysctl.d/50-rand-va-space.conf
+        content: "kernel.randomize_va_space=2"
+      owner: root
+      group: root
+      mode: '0644'
