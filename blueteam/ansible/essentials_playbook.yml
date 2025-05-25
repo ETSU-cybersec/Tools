@@ -1,0 +1,59 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    
+    - name: Update all packages for debian
+      apt:
+        update_cache: yes
+        upgrade: dist
+      when: ansible_facts['os_family'] == "Debian"
+
+    - name: Update YUM packages
+      yum:
+        name: '*'
+        state: latest
+      when: ansible_facts['os_family'] == "RedHat"
+    
+    - name: Update DNF packages
+      dnf:
+        name: '*'
+        state: latest
+      when: ansible_facts['pkg_mgr'] == "dnf"
+
+    - name: Update Zypper packages
+      zypper:
+        name: '*'
+        state: latest
+      when: ansible_facts['os_family'] == "Suse"
+
+    - name: Update Alpine packages
+      apk:
+        update_cache: yes
+        upgrade: yes
+      when: ansible_facts['os_family'] == "Alpine"
+
+    - name: Install apparmor
+      package:
+        name: apparmor
+        state: present
+
+    - name: Install lynis
+      package:
+        name: lynis
+        state: present
+
+    - name: Run lynis scan and save it to /var/log
+      shell: lynis audit system --quiet --logfile /var/log/lynis.log --report-file /var/log/lynis-report.dat
+      args:
+        executable: /bin/bash
+
+
+    - name: Run a apparmor scan and save it to /var/log
+      shell: |
+        if command -v apparmor_status &> /dev/null; then apparmor_status > /var/log/apparmor-scan.txt
+        elif command -v aa-status &> /dev/null; then aa-status /var/log/apparmor-scan.txt
+        else echo "Apparmor not install or status command not found" > /var/log/apparmor-scan.txt
+        fi
+      args:
+        executable: /bin/bash
