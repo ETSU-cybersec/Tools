@@ -2,7 +2,7 @@
 ### (aka. pull a riley) (p.s. riley is writing this)
 
 
-# 1) What is Fail2Ban?
+#   [red]{color="red"} 1) What is Fail2Ban?
 
 
 # 2) Installing Fail2Ban
