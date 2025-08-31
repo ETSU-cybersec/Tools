@@ -1,4 +1,4 @@
-# Tools used for red teaming :>
+# Tools used for red teaming :-)
 
 ##   Web Application Testing Tools
     - Burpsuite
@@ -29,4 +29,5 @@
     - Dradis / Serpico – professional reporting frameworks.
     - CherryTree / Obsidian / OneNote – organize notes, commands, and evidence.
     - Screenshot tools (Flameshot, ShareX) – document findings clearly.
+
 
