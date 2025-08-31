@@ -6,6 +6,10 @@
 
 
 # WinPEAS is the Windows counterpart that automates the discovery of insecure settings, weak permissions, and escalation opportunities on Windows systems.
-  ## Install command:
+  ## Install command linux:
       - wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASany_ofs.exe
       - winPEASany_ofs.exe      (run this on the machine you want to pen test)
+      
+  ## Install command windows powershell:
+      - Invoke-WebRequest -Uri "https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASany_ofs.exe" -OutFile "winPEAS.exe"
+      - .\winPEAS.exe
