@@ -36,8 +36,9 @@
 
 ## Credential and Identity Monitoring
 
-BloodHound + SharpHound – Active Directory attack path analysis (for defensive awareness)
-Audit policies in AD / Windows Group Policy – to monitor logons and privilege changes
-Configuration and Integrity Monitoring
-AIDE (Advanced Intrusion Detection Environment) – file integrity checking
-Tripwire (open-source) – host-based integrity monitoring
+    BloodHound + SharpHound – Active Directory attack path analysis (for defensive awareness)
+    Audit policies in AD / Windows Group Policy – to monitor logons and privilege changes
+    Configuration and Integrity Monitoring
+    AIDE (Advanced Intrusion Detection Environment) – file integrity checking
+    Tripwire (open-source) – host-based integrity monitoring
+
