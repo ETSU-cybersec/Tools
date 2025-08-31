@@ -1,4 +1,4 @@
-# Blue Teaming Tools- \\(OvO)/
+# Blue Teaming Tools \\(OvO)/
 
 ## System Hardening and Auditing
     
@@ -42,6 +42,7 @@
     Configuration and Integrity Monitoring
     AIDE (Advanced Intrusion Detection Environment) – file integrity checking
     Tripwire (open-source) – host-based integrity monitoring
+
 
 
 
