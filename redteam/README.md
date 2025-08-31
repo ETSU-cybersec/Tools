@@ -24,4 +24,8 @@
     - LinPEAS / WinPEAS – enumerate privilege escalation paths.
     - BloodHound + SharpHound – map AD attack paths.
     - PowerSploit / Mimikatz – credential extraction (if in-scope).
+## Reporting & Documentation
 
+    - Dradis / Serpico – professional reporting frameworks.
+    - CherryTree / Obsidian / OneNote – organize notes, commands, and evidence.
+    - Screenshot tools (Flameshot, ShareX) – document findings clearly.
