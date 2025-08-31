@@ -1,5 +1,5 @@
 # LinPEAS is a Linux privilege escalation script that scans a system for misconfigurations, vulnerabilities, and potential paths to gain higher privileges.
-  ## Install command:
+  ## Install command linux:
       - wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
       - chmod +x linpeas.sh       (make it executable)
       - ./linpeas.sh     (run this on the machine you want to pen test)
