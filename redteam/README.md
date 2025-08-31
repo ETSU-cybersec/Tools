@@ -13,3 +13,11 @@
     - Hydra – brute force online logins.
     - SecLists / rockyou.txt – wordlists for testing.
 
+## Forensics & Data Extraction
+    - Wireshark / tshark – packet capture analysis.
+    - Binwalk / exiftool / steghide – analyze images and firmware.
+
+## Privilege Escalation & Post-Exploitation
+    - LinPEAS / WinPEAS – enumerate privilege escalation paths.
+    - BloodHound + SharpHound – map AD attack paths.
+    - PowerSploit / Mimikatz – credential extraction (if in-scope).
