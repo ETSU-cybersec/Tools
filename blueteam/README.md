@@ -6,6 +6,7 @@
     OpenVAS – vulnerability scanning
     Nessus Essentials – vulnerability assessment (if allowed)
     CIS Benchmarks – configuration hardening guides
+    Fail2Ban- Monitors system logs for repeated failed login attempts and blocks with firewall rules to prevent brute-force attacks.
 
 ## Log Collection and Monitoring
 
@@ -41,4 +42,5 @@
     Configuration and Integrity Monitoring
     AIDE (Advanced Intrusion Detection Environment) – file integrity checking
     Tripwire (open-source) – host-based integrity monitoring
+
 
