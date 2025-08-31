@@ -1,4 +1,4 @@
-# Club-created tools to help members in koths and competitions
+# Tools used for red teaming.
 
 ##   Web Application Testing Tools:
     - Burpsuite
@@ -12,3 +12,4 @@
     - Hashcat / John the Ripper – password cracking.
     - Hydra – brute force online logins.
     - SecLists / rockyou.txt – wordlists for testing.
+
