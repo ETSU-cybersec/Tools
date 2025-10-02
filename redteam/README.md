@@ -8,6 +8,7 @@
 
 ## Network Scanning & Exploitation
     - Nmap – service discovery, version detection, vuln scanning.
+    - Rustscan - more port enumeration, can be piped into nmap.
     - Metasploit Framework – exploit development and post-exploitation.
     - CrackMapExec / Impacket tools – Active Directory and SMB testing.
     - Responder / ntlmrelayx – capture and relay network authentication.
@@ -29,5 +30,6 @@
     - Dradis / Serpico – professional reporting frameworks.
     - CherryTree / Obsidian / OneNote – organize notes, commands, and evidence.
     - Screenshot tools (Flameshot, ShareX) – document findings clearly.
+
 
 
